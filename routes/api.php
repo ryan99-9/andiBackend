@@ -1,5 +1,9 @@
 <?php
 
+use App\Http\Controllers\AboutMeController;
+use App\Http\Controllers\AcitivyController;
+use App\Http\Controllers\ArtikelController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\SubTitleController;
 use App\Http\Controllers\TitleController;
 use Illuminate\Http\Request;
@@ -18,18 +22,24 @@ use App\Http\Controllers\LoginController;
  |
  */
 Route::post('login', [LoginController::class, 'login']);
-Route::get('logout', [LoginController::class, 'logout']);
 Route::get('title', [TitleController::class, 'index']);
 Route::get('subtitle', [SubTitleController::class, 'index']);
-
-
+Route::get('aboutme', [AboutMeController::class, 'index']);
+Route::get('activity', [AcitivyController::class, 'index']);
+Route::get('artikel', [ArtikelController::class, 'index']);
+Route::get('contact', [ContactController::class, 'index']);
 
 Route::group(['middleware' => 'auth:sanctum'], function () {
     // Route::post('title', [TitleController::class, 'store']);
     Route::put('title/{title}/update', [TitleController::class, 'update']);
     Route::put('subtitle/{subtitle}/update', [SubTitleController::class, 'update']);
-
-    // Route::delete('title/{title}/delete', [TitleController::class, 'destroy']);
+    Route::put('aboutme/{aboutme}/update', [AboutMeController::class, 'update']);
+    Route::put('acitivy/{activity}/update', [AcitivyController::class, 'update']);
+    Route::put('contact/{contact}/update', [ContactController::class, 'update']);
+    Route::put('artikel/{artikel}/update', [ArtikelController::class, 'update']);
+    Route::post('artikel', [ArtikelController::class, 'store']);
+    Route::delete('artikel/{artikel}/delete', [ArtikelController::class, 'destroy']);
+    Route::get('logout', [LoginController::class, 'logout']);
 
 });
 

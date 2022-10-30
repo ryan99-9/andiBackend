@@ -24,7 +24,7 @@ class LoginController extends Controller
 
     public function logout(){
         $user = request()->user();
-        $user->tokens()->delete();
+        $user -> tokens()->delete();
         return response()->json([
             "error" => false,
             "message" => "Berhasil Keluar"
