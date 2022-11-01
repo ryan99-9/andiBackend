@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\SubTitle;
+use App\Models\Subtitle;
 use Illuminate\Http\Request;
 
-class SubTitleController extends Controller
+class SubtitleController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class SubTitleController extends Controller
      */
     public function index()
     {
-        return response()->json(SubTitle::all(),200);
+        return response()->json(Subtitle::all(),200);
     }
 
     /**
@@ -31,10 +31,10 @@ class SubTitleController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\SubTitle  $subTitle
+     * @param  \App\Models\Subtitle  $Subtitle
      * @return \Illuminate\Http\Response
      */
-    public function show(SubTitle $subTitle)
+    public function show(Subtitle $Subtitle)
     {
         //
     }
@@ -43,22 +43,22 @@ class SubTitleController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\SubTitle  $subTitle
+     * @param  \App\Models\Subtitle  $Subtitle
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, SubTitle $subTitle)
+    public function update(Request $request, Subtitle $Subtitle)
     {
-        $subTitle->update($request->all());
+        $Subtitle->update($request->all());
         return response()->json(['message'=>'sukses diedit'],200);
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\SubTitle  $subTitle
+     * @param  \App\Models\Subtitle  $Subtitle
      * @return \Illuminate\Http\Response
      */
-    public function destroy(SubTitle $subTitle)
+    public function destroy(Subtitle $Subtitle)
     {
         //
     }

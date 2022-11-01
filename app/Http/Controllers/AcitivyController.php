@@ -25,7 +25,8 @@ class AcitivyController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Activity::create($request->all());
+        return response()->json(['message'=>'tambah data sukses'],200);
     }
 
     /**
@@ -60,6 +61,7 @@ class AcitivyController extends Controller
      */
     public function destroy(Activity $activity)
     {
-        //
+        $activity->delete();
+        return response()->json(['message'=>'sukses dihapus'],200);
     }
 }

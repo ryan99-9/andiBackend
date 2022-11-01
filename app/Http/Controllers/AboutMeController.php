@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\AboutMe;
+use App\Models\Aboutme;
 use Illuminate\Http\Request;
 
-class AboutMeController extends Controller
+class AboutmeController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class AboutMeController extends Controller
      */
     public function index()
     {
-        return response()->json(AboutMe::all(),200);
+        return response()->json(Aboutme::all(),200);
     }
 
     /**
@@ -31,10 +31,10 @@ class AboutMeController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\AboutMe  $aboutMe
+     * @param  \App\Models\Aboutme  $Aboutme
      * @return \Illuminate\Http\Response
      */
-    public function show(AboutMe $aboutMe)
+    public function show(Aboutme $Aboutme)
     {
         //
     }
@@ -43,22 +43,22 @@ class AboutMeController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\AboutMe  $aboutMe
+     * @param  \App\Models\Aboutme  $Aboutme
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, AboutMe $aboutMe)
+    public function update(Request $request, Aboutme $Aboutme)
     {
-        $aboutMe->update($request->all());
+        $Aboutme->update($request->all());
         return response()->json(['message'=>'sukses diedit'],200);
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\AboutMe  $aboutMe
+     * @param  \App\Models\Aboutme  $Aboutme
      * @return \Illuminate\Http\Response
      */
-    public function destroy(AboutMe $aboutMe)
+    public function destroy(Aboutme $Aboutme)
     {
         //
     }
